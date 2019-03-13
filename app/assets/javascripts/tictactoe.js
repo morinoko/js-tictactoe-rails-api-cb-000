@@ -27,8 +27,9 @@ function attachListeners() {
 var player = () => turn % 2 ? 'O' : 'X';
 
 function resetBoard() {
-  turn = 0;
   $("td").empty();
+  turn = 0;
+  currentGame = 0;
 }
 
 function doTurn(square) {
