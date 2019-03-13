@@ -52,7 +52,7 @@ function doTurn(square) {
 function updateState(square) {
   let token = player();
   debugger;
-  if ( !$(square).innerText() ) {
+  if ( !square.text() ) {
     $(square).text(token);
   }
 }
