@@ -21,9 +21,10 @@ function attachListeners() {
   $("#clear").on("click", resetBoard);
 };
 
-function player() {
-  return turn % 2 ? 'O' : 'X';
-}
+// function player() {
+//   return turn % 2 ? 'O' : 'X';
+// }
+var player = () => turn % 2 ? 'O' : 'X';
 
 function resetBoard() {
   turn = 0;
