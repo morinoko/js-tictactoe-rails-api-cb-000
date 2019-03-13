@@ -10,6 +10,11 @@ $(document).ready(function() {
   attachListeners();
 });
 
+// function player() {
+//   return turn % 2 ? 'O' : 'X';
+// }
+var player = () => turn % 2 ? 'O' : 'X';
+
 function attachListeners() {
   $("td").on("click", function() {
     let square = this;
@@ -24,11 +29,6 @@ function attachListeners() {
   $("#previous").on("click", previousGames);
   $("#clear").on("click", resetBoard);
 };
-
-// function player() {
-//   return turn % 2 ? 'O' : 'X';
-// }
-var player = () => turn % 2 ? 'O' : 'X';
 
 function resetBoard() {
   $("td").empty();
