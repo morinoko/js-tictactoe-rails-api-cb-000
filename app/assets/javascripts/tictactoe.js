@@ -13,7 +13,7 @@ $(function() {
 function attachListeners() {
   $("td").on("click", function() {
     let square = this;
-    
+
     // Check if square is available and that there is no winner before doing turn
     if ( !square.innerHTML && !checkWinner() ) {
       doTurn(square);
