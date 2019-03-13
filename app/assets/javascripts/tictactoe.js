@@ -51,6 +51,7 @@ function doTurn(square) {
 
 function updateState(square) {
   let token = player();
+  
   if ( !square.innerText() )
     $(square).text(token);
   }
