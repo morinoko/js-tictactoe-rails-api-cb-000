@@ -55,11 +55,6 @@ function attachListeners() {
   $("#clear").on("click", () => resetBoard());
 };
 
-function updateState(square) {
-  let token = player();
-  $(square).text(token);
-}
-
 function checkWinner() {
   let board = {};
   let winner = false;
@@ -79,6 +74,11 @@ function checkWinner() {
   });
 
   return winner;
+}
+
+function updateState(square) {
+  let token = player();
+  $(square).text(token);
 }
 
 function setMessage(message) {
