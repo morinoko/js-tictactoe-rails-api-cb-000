@@ -5,8 +5,8 @@ const WINNING_COMBOS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6],
 var turn = 0;
 var currentGame = 0; // 0 = false in JS
 
-$(function() {
-  // Get buttons ready on load
+// Get listeners ready on load
+$(document).ready(function() {
   attachListeners();
 });
 
