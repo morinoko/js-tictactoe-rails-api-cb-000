@@ -31,13 +31,12 @@ function resetBoard() {
 }
 
 function doTurn(square) {
-  turn++;
-
   //Clear message if left over from last game
   if (turn == 1) {
     $("#message").text("");
   }
-
+  
+  turn++;
   updateState(square);
 
   if ( checkWinner() ) {
