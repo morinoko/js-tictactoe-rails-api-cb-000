@@ -51,8 +51,9 @@ function doTurn(square) {
 
 function updateState(square) {
   let token = player();
-  if ( $(square).text() == "" )
-  $(square).text(token);
+  if ( !square.innerText() )
+    $(square).text(token);
+  }
 }
 
 function checkWinner() {
