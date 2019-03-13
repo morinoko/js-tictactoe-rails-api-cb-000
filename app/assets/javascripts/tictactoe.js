@@ -109,8 +109,7 @@ function saveGame() {
 }
 
 function showPreviousGames() {
-  $.get("/games")
-  .done(function(savedGames) {
+  $.get("/games", function(savedGames) {
     if (savedGames.data.length) {
       savedGames.data.forEach(function(game) {
         buttonizeGame(game.id);
