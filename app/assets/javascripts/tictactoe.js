@@ -95,15 +95,13 @@ function saveGame() {
       url: `/games/${currentGame}`,
       type: "PATCH",
       data: gameData
-    }).done(function(game) {
-      console.log(game);
     });
   } else {
     // save new game
     $.post("/games", gameData, function(game) {
       currentGame = game.data.id;
-      $("#games").append(`<button id="game-id-${game.data.id}" data-id="${game.data.id}">Game ` + game.data.id + "</button><br>");
-      $(`#game-id-${game.data.id}`).on("click", reloadGame(game.data.id));
+      $('#games').append(`<button id="gameid-${game.data.id}">Game ${game.data.id}</button><br>`);
+      $("#gameid-" + game.data.id).on('click', () => reloadGame(game.data.id));
     });
   }
 }
