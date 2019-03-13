@@ -45,7 +45,7 @@ function attachListeners() {
     let square = this;
 
     // Check if square is available and that there is no winner before doing turn
-    if ( !$.text(this) && !checkWinner() ) {
+    if ( !square.innerHTML && !checkWinner() ) {
       doTurn(square);
     }
   });
