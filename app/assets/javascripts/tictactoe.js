@@ -13,6 +13,8 @@ $(function() {
 function attachListeners() {
   $("td").on("click", function() {
     let square = this;
+
+    if ( !square.innerHTML && !checkWinner() ) {
     doTurn(square);
   });
 
@@ -38,10 +40,8 @@ function doTurn(square) {
     $("#message").text("");
   }
 
-  if ( !square.innerHTML ) {
-    turn++;
-    updateState(square);
-  }
+  turn++;
+  updateState(square);
 
   if ( checkWinner() ) {
     saveGame();
