@@ -41,9 +41,11 @@ function doTurn(square) {
   updateState(square);
 
   if ( checkWinner() ) {
+    saveGame();
     resetBoard();
   } else if ( checkDraw() ) {
     setMessage("Tie Game");
+    saveGame();
     resetBoard();
   }
 }
@@ -127,7 +129,19 @@ function getState() {
 }
 
 function loadGame(gameId) {
-  //console.log(gameId, "loaded");
+  $.get("games/" + gameId)
+  .done(function(loadedGame) {
+    console.log(loadedGame.data.id);
+    console.log(loadedGame.data.attributes.state);
+    const state = loadedGame.data.attributes.state;
+    const id = loadedGame.data.id;
+
+    currentGame = id;
+
+    state.forEach(function(currentValue, index) {
+      $("#" + index).text(currentValue);
+    });
+  });
 }
 
 function buttonizeGame(gameId) {
