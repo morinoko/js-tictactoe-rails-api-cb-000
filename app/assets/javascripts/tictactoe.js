@@ -15,7 +15,7 @@ function attachListeners() {
     let square = this;
 
     if ( !square.innerHTML && !checkWinner() ) {
-      doTurn(square);]
+      doTurn(square);
     }
   });
 
