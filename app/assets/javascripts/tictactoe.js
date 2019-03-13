@@ -36,7 +36,7 @@ function doTurn(square) {
     $("#message").text("");
   }
 
-  if ( !square.text() ) {
+  if ( !square.innerHTML ) {
     turn++;
     updateState(square);
   }
