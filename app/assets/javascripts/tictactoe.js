@@ -15,27 +15,6 @@ $(document).ready(function() {
 // }
 var player = () => turn % 2 ? 'O' : 'X';
 
-function attachListeners() {
-  $("td").on("click", function() {
-    let square = this;
-
-    // Check if square is available and that there is no winner before doing turn
-    if ( !square.innerHTML && !checkWinner() ) {
-      doTurn(square);
-    }
-  });
-
-  $("#save").on("click", saveGame);
-  $("#previous").on("click", previousGames);
-  $("#clear").on("click", resetBoard);
-};
-
-function resetBoard() {
-  $("td").empty();
-  turn = 0;
-  currentGame = 0;
-}
-
 function doTurn(square) {
   //Clear message if left over from last game
   if (turn == 0) {
@@ -54,6 +33,27 @@ function doTurn(square) {
     resetBoard();
   }
 }
+
+function resetBoard() {
+  $("td").empty();
+  turn = 0;
+  currentGame = 0;
+}
+
+function attachListeners() {
+  $("td").on("click", function() {
+    let square = this;
+
+    // Check if square is available and that there is no winner before doing turn
+    if ( !$.text(this) && !checkWinner() ) {
+      doTurn(square);
+    }
+  });
+
+  $("#save").on("click", saveGame);
+  $("#previous").on("click", previousGames);
+  $("#clear").on("click", resetBoard);
+};
 
 function updateState(square) {
   let token = player();
