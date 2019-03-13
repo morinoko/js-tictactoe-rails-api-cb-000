@@ -28,7 +28,7 @@ var player = () => turn % 2 ? 'O' : 'X';
 
 function resetBoard() {
   turn = 0;
-  $("td").text("");
+  $("td").empty();
 }
 
 function doTurn(square) {
