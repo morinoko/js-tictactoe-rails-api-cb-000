@@ -40,9 +40,7 @@ function doTurn(square) {
 
   updateState(square);
 
-  let winner = checkWinner();
-
-  if ( winner ) {
+  if ( checkWinner() ) {
     saveGame();
     resetBoard();
   } else if ( checkDraw() ) {
