@@ -13,7 +13,7 @@ $(document).ready(function() {
 // function player() {
 //   return turn % 2 ? 'O' : 'X';
 // }
-var player = () => turn % 2 ? 'O' : 'X';
+var player = () => turn % 2 ? 'X' : 'O';
 
 function doTurn(square) {
   //Clear message if left over from last game
