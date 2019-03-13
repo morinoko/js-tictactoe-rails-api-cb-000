@@ -78,7 +78,7 @@ function checkWinner() {
 }
 
 function checkDraw() {
-  return !checkWinner() && turn == 9;
+  return !checkWinner() && turn == 8;
 }
 
 function setMessage(message) {
