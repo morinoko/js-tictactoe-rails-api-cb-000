@@ -129,18 +129,23 @@ function getState() {
 }
 
 function reloadGame(gameId) {
-  $.get("/games/" + gameId)
+  $.get(`/games/${gameId}`)
   .done(function(loadedGame) {
     console.log(loadedGame.data.id);
     console.log(loadedGame.data.attributes.state);
     const state = loadedGame.data.attributes.state;
     const id = loadedGame.data.id;
 
-    currentGame = id;
-
     state.forEach(function(currentValue, index) {
       $("#" + index).text(currentValue);
     });
+
+    turn = state.join('').length;
+    currentGame = id;
+
+    if (!checkWinner() && turn === 9) {
+      setMessage('Tie game.');
+    }
   });
 }
 
