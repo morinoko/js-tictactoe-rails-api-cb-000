@@ -46,7 +46,7 @@ function doTurn(square) {
     saveGame();
     resetBoard();
   } else if ( checkDraw() ) {
-    setMessage("Tie Game");
+    setMessage("Tie game");
     saveGame();
     resetBoard();
   }
