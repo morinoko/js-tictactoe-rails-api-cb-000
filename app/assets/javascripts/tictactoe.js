@@ -82,7 +82,7 @@ function checkWinner() {
 }
 
 function setMessage(message) {
-  $("#message").html(message);
+  $("#message").text(message);
 }
 
 function saveGame() {
