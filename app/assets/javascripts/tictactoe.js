@@ -50,9 +50,9 @@ function attachListeners() {
     }
   });
 
-  $("#save").on("click", saveGame);
-  $("#previous").on("click", previousGames);
-  $("#clear").on("click", resetBoard);
+  $("#save").on("click", () => saveGame());
+  $("#previous").on("click", () => previousGames());
+  $("#clear").on("click", () => resetBoard());
 };
 
 function updateState(square) {
