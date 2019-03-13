@@ -86,8 +86,8 @@ function setMessage(message) {
 }
 
 function saveGame() {
-  let state = getState();
-  let gameData = { state: state };
+  var state = getState();
+  var gameData = { state: state };
 
   if ( currentGame ) {
     // update game
