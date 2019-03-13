@@ -91,7 +91,7 @@ function saveGame() {
   if ( currentGame ) {
     // update game
     $.ajax({
-      url: "games/" + currentGame,
+      url: "/games/" + currentGame,
       method: "PATCH",
       data: gameData
     }).done(function(game) {
@@ -99,7 +99,7 @@ function saveGame() {
     });
   } else {
     // save new game
-    $.post("games/", gameData)
+    $.post("/games/", gameData)
     .done(function(game) {
       currentGame = game.data.id;
       console.log(game);
@@ -129,7 +129,7 @@ function getState() {
 }
 
 function loadGame(gameId) {
-  $.get("games/" + gameId)
+  $.get("/games/" + gameId)
   .done(function(loadedGame) {
     console.log(loadedGame.data.id);
     console.log(loadedGame.data.attributes.state);
