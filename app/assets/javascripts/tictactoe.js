@@ -146,5 +146,5 @@ function reloadGame(gameId) {
 
 function buttonizeGame(gameId) {
   $("#games").append(`<button id="game-id-${gameId}" data-id="${gameId}">Game ` + gameId + "</button><br>");
-  $(`#game-id-${gameId}`).on("click", reloadGame(gameId));
+  $(`#game-id-${gameId}`).on("click", () => reloadGame(gameId));
 }
