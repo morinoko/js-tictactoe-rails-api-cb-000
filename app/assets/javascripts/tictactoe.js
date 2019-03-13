@@ -32,7 +32,7 @@ function resetBoard() {
 
 function doTurn(square) {
   //Clear message if left over from last game
-  if (turn == 1) {
+  if (turn == 0) {
     $("#message").text("");
   }
   
