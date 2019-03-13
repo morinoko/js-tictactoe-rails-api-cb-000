@@ -100,10 +100,10 @@ function saveGame() {
     });
   } else {
     // save new game
-    $.post("/games/", gameData)
-    .done(function(game) {
+    $.post("/games", gameData, function(game) {
       currentGame = game.data.id;
-      console.log(game);
+      $("#games").append(`<button id="game-id-${game.data.id}" data-id="${game.data.id}">Game ` + game.data.id + "</button><br>");
+      $(`#game-id-${game.data.id}`).on("click", reloadGame(game.data.id));
     });
   }
 }
@@ -129,7 +129,7 @@ function getState() {
   return board;
 }
 
-function loadGame(gameId) {
+function reloadGame(gameId) {
   $.get("/games/" + gameId)
   .done(function(loadedGame) {
     console.log(loadedGame.data.id);
@@ -147,5 +147,5 @@ function loadGame(gameId) {
 
 function buttonizeGame(gameId) {
   $("#games").append(`<button id="game-id-${gameId}" data-id="${gameId}">Game ` + gameId + "</button><br>");
-  $(`#game-id-${gameId}`).on("click", loadGame(gameId));
+  $(`#game-id-${gameId}`).on("click", reloadGame(gameId));
 }
