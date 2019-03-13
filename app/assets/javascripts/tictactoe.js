@@ -93,7 +93,7 @@ function saveGame() {
     // update game
     $.ajax({
       url: `/games/${currentGame}`,
-      method: "PATCH",
+      type: "PATCH",
       data: gameData
     }).done(function(game) {
       console.log(game);
