@@ -56,8 +56,8 @@ function attachListeners() {
 };
 
 function checkWinner() {
-  let board = {};
-  let winner = false;
+  var board = {};
+  var winner = false;
 
   $("td").text(function(index, token) {
     board[index] = token;
