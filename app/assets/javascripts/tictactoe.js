@@ -12,8 +12,8 @@ $(function() {
 
 function attachListeners() {
   $("td").on("click", function() {
-    let $square = $(this);
-    doTurn($square);
+    let square = this;
+    doTurn(square);
   });
 
   $("#save").on("click", saveGame);
