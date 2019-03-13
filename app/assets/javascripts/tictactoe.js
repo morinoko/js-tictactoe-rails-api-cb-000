@@ -109,6 +109,9 @@ function saveGame() {
 }
 
 function showPreviousGames() {
+  // Clear if list is already present
+  $('#games').empty();
+
   $.get("/games", function(savedGames) {
     if (savedGames.data.length) {
       savedGames.data.forEach(function(game) {
