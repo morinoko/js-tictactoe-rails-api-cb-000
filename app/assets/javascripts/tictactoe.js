@@ -36,8 +36,10 @@ function doTurn(square) {
     $("#message").text("");
   }
 
-  turn++;
-  updateState(square);
+  if ( !square.text() ) {
+    turn++;
+    updateState(square);
+  }
 
   if ( checkWinner() ) {
     saveGame();
@@ -51,10 +53,7 @@ function doTurn(square) {
 
 function updateState(square) {
   let token = player();
-  
-  if ( !square.text() ) {
-    $(square).text(token);
-  }
+  $(square).text(token);
 }
 
 function checkWinner() {
