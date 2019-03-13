@@ -22,7 +22,7 @@ function attachListeners() {
 };
 
 function player() {
-  return turn % 2 ? 'X' : '0';
+  return turn % 2 ? 'X' : 'O';
 }
 
 function resetBoard() {
