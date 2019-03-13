@@ -45,7 +45,7 @@ function doTurn(square) {
   if ( checkWinner() ) {
     saveGame();
     resetBoard();
-  } else if ( checkDraw() ) {
+  } else if ( turn === 9 ) {
     setMessage("Tie game.");
     saveGame();
     resetBoard();
@@ -76,10 +76,6 @@ function checkWinner() {
   });
 
   return winner;
-}
-
-function checkDraw() {
-  return turn === 9;
 }
 
 function setMessage(message) {
